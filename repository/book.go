@@ -17,8 +17,7 @@ type BookRepository interface {
 	GetBook(ctx context.Context, id pgtype.UUID) (dbgen.Book, error)
 }
 
-func (b *BookRepo) GetBook(ctx context.Context, id pgtype.UUID) (dbgen.Book, error) {
-
+func (b *BookRepo) GetBook(ctx context.Context, id pgtype.UUID) (dbgen.GetBookRow, error) {
 	return b.db.GetBook(ctx, id)
 }
 
